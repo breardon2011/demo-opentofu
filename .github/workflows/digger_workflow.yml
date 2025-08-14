@@ -23,11 +23,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: ${{ fromJSON(github.event.inputs.spec).job_id }}
-        run: echo "job id ${{ fromJSON(github.event.inputs.spec).job_id }}"
+      - name: Set job name
+        run: |
+          if [ -n "${{ github.event.inputs.spec }}" ]; then
+            echo "JOB_ID=$(echo '${{ github.event.inputs.spec }}' | jq -r '.job_id // "default-job"')" >> $GITHUB_ENV
+          else
+            echo "JOB_ID=manual-trigger" >> $GITHUB_ENV
+          fi
+      - name: ${{ env.JOB_ID }}
+        run: echo "Running job: ${{ env.JOB_ID }}"
       - uses: diggerhq/digger@vLatest
         with:
-          digger-spec: ${{ inputs.spec }}
+          digger-spec: ${{ github.event.inputs.spec }}
           setup-aws: true
           setup-terraform: true
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
