@@ -8,38 +8,32 @@ on:
       run_name:
         required: false
 
-run-name: ${{inputs.run_name}}
+run-name: '${{ inputs.run_name }}'
 
 jobs:
   digger-job:
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # required to merge PRs
-      actions: write       # required for plan persistence
-      id-token: write      # required for workload-identity-federation
-      pull-requests: write # required to post PR comments
-      statuses: write      # required to validate combined PR status
-      issues: write
+      contents: write
+      actions: write
+      pull-requests: write
+      issues: read
+      statuses: write
+      # id-token is only needed for AWS OIDC; safe to remove for null_resource-only
+      # id-token: write
 
     steps:
-      - name: ${{ fromJSON(github.event.inputs.spec).job_id }}
-        run: echo "job id ${{ fromJSON(github.event.inputs.spec).job_id }}"
       - uses: actions/checkout@v4
 
-      - name: Setup Infracost
-        uses: infracost/actions/setup@v2
-        with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}      
+      - name: Print job id
+        run: echo "job id "
 
-      - name: digger
-        uses: diggerhq/digger@feat/support-PLANOUT
+      - uses: diggerhq/digger@vLatest
         with:
           digger-spec: ${{ inputs.spec }}
-          digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
-          setup-aws: false
-          disable-locking: true
-          setup-opentofu: true
           setup-terraform: true
+          setup-aws: false          # 🚫 turn off AWS setup
+          # (no aws-access-key-id / aws-secret-access-key)
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
