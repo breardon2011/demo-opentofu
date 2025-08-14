@@ -31,11 +31,11 @@ jobs:
       - uses: actions/checkout@v4
 
       # Optional: keep only if you actually run `infracost` in your workflow steps/spec
-      - name: Setup Infracost
-        if: ${{ secrets.INFRACOST_API_KEY != '' }}
-        uses: infracost/actions/setup@v2
-        with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}
+      # - name: Setup Infracost
+      #   if: ${{ secrets.INFRACOST_API_KEY != '' }}
+      #   uses: infracost/actions/setup@v2
+      #   with:
+      #     api-key: ${{ secrets.INFRACOST_API_KEY }}
 
       - name: digger
         uses: diggerhq/digger@vLatest
