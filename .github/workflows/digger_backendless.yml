@@ -3,42 +3,47 @@ name: Digger Workflow
 on:
   pull_request:
     branches: [ "main" ]
-    types: [ opened, synchronize ]
+    types: [ opened, synchronize, reopened ]
   issue_comment:
-    types: [created]
+    types: [ created ]
   workflow_dispatch:
+    inputs:
+      run_name:
+        description: "Optional run name"
+        required: false
 
-
-run-name: ${{inputs.run_name}}
+# Only set when workflow_dispatch provides it; otherwise empty
+run-name: ${{ inputs.run_name }}
 
 jobs:
   digger-job:
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # required to merge PRs
-      actions: write       # required for plan persistence
-      id-token: write      # required for workload-identity-federation
-      pull-requests: write # required to post PR comments
-      statuses: write      # required to validate combined PR status
-      issues: write
+      contents: write        # merge PRs, update comments
+      actions: write         # plan persistence
+      pull-requests: write   # post PR comments
+      statuses: write        # set commit status
+      issues: write          # comment on issue-number syntax
+      # id-token not needed unless using AWS OIDC
+      # id-token: write
 
     steps:
       - uses: actions/checkout@v4
 
+      # Optional: keep only if you actually run `infracost` in your workflow steps/spec
       - name: Setup Infracost
+        if: ${{ secrets.INFRACOST_API_KEY != '' }}
         uses: infracost/actions/setup@v2
         with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}      
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
 
       - name: digger
-        uses: diggerhq/digger@feat/support-single-comment-summary
+        uses: diggerhq/digger@vLatest
         with:
-          no-backend: true
-          setup-aws: true
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          disable-locking: true
-          setup-opentofu: true
+          no-backend: true          # demo/testing mode (no remote state/locks)
+          disable-locking: true     # no DynamoDB/etc. lock
+          setup-opentofu: true      # use OpenTofu in runners
+          setup-aws: false          # 🚫 no AWS needed for null_resource
           reporting-strategy: "latest_run_comment"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
