@@ -12,11 +12,11 @@ projects:
     dir: prod/
 
 
-# workflows:
-#   default:
-#     plan:
-#       steps:
-#         - init
-#         - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
-#         # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
+workflows:
+  default:
+    plan:
+      steps:
+        - init
+        - run: tofu plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
+        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
 
