@@ -4,9 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       spec:
-        required: true
+        required: false
+        default: |
+          {
+            "job_id": "test-job",
+            "project_name": "test-project",
+            "commands": ["plan"],
+            "working_dir": "."
+          }
+        description: 'Digger spec JSON (leave default for testing)'
       run_name:
         required: false
+        default: 'Digger Test Run'
 
 run-name: '${{inputs.run_name}}'
 
@@ -23,22 +32,43 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
       - name: Set job name
         run: |
           if [ -n "${{ github.event.inputs.spec }}" ]; then
-            echo "JOB_ID=$(echo '${{ github.event.inputs.spec }}' | jq -r '.job_id // "default-job"')" >> $GITHUB_ENV
+            echo "JOB_ID=$(echo '${{ github.event.inputs.spec }}' | jq -r '.job_id // "test-job"')" >> $GITHUB_ENV
           else
             echo "JOB_ID=manual-trigger" >> $GITHUB_ENV
           fi
-      - name: ${{ env.JOB_ID }}
-        run: echo "Running job ${{ env.JOB_ID }}"
-      - uses: diggerhq/digger@vLatest
+      
+      - name: Debug - Show job info
+        run: |
+          echo "Running job: ${{ env.JOB_ID }}"
+          echo "Spec input: ${{ github.event.inputs.spec }}"
+          echo "Working directory contents:"
+          ls -la
+      
+      # Option 1: Test without AWS (recommended for initial testing)
+      - name: Test Digger without AWS
+        uses: diggerhq/digger@vLatest
         with:
           digger-spec: ${{ github.event.inputs.spec }}
-          setup-aws: true
-          setup-terraform: true
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          setup-aws: false          # Disable AWS setup
+          setup-terraform: true     # Keep Terraform setup
+          # Remove AWS credentials entirely for testing
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Option 2: If you need AWS later, uncomment this and comment out the above step
+      # - name: Digger with AWS (for later use)
+      #   uses: diggerhq/digger@vLatest
+      #   with:
+      #     digger-spec: ${{ github.event.inputs.spec }}
+      #     setup-aws: true
+      #     setup-terraform: true
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #   env:
+      #     GITHUB_CONTEXT: ${{ toJson(github) }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
