@@ -4,11 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       spec:
-        required: true
+        required: false
+        default: |
+          {
+            "job_id": "test-job",
+            "project_name": "test-project",
+            "commands": ["plan"],
+            "working_dir": "."
+          }
+        description: 'Digger spec JSON (leave default for testing)'
       run_name:
         required: false
+        default: 'Digger Test Run'
 
-run-name: ${{inputs.run_name}}
+run-name: '${{inputs.run_name}}'
 
 jobs:
   digger-job:
@@ -18,28 +27,49 @@ jobs:
       actions: write       # required for plan persistence
       id-token: write      # required for workload-identity-federation
       pull-requests: write # required to post PR comments
+      issues: read         # required to check if PR number is an issue or not
       statuses: write      # required to validate combined PR status
-      issues: write
 
     steps:
-      - name: ${{ fromJSON(github.event.inputs.spec).job_id }}
-        run: echo "job id ${{ fromJSON(github.event.inputs.spec).job_id }}"
       - uses: actions/checkout@v4
-
-      - name: Setup Infracost
-        uses: infracost/actions/setup@v2
+      
+      - name: Set job name
+        run: |
+          if [ -n "${{ github.event.inputs.spec }}" ]; then
+            echo "JOB_ID=$(echo '${{ github.event.inputs.spec }}' | jq -r '.job_id // "test-job"')" >> $GITHUB_ENV
+          else
+            echo "JOB_ID=manual-trigger" >> $GITHUB_ENV
+          fi
+      
+      - name: Debug - Show job info
+        run: |
+          echo "Running job: ${{ env.JOB_ID }}"
+          echo "Spec input: ${{ github.event.inputs.spec }}"
+          echo "Working directory contents:"
+          ls -la
+      
+          
+      # Option 1: Test without AWS (recommended for initial testing)
+      - name: Test Digger without AWS
+        uses: diggerhq/digger@vLatest
         with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}      
-
-      - name: digger
-        uses: diggerhq/digger@feat/support-PLANOUT
-        with:
-          digger-spec: ${{ inputs.spec }}
-          digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
-          setup-aws: false
-          disable-locking: true
-          setup-opentofu: true
-          setup-terraform: true
+          digger-spec: ${{ github.event.inputs.spec }}
+          setup-aws: false          # Disable AWS setup
+          setup-terraform: true     # Keep Terraform setup
+          # Remove AWS credentials entirely for testing
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Option 2: If you need AWS later, uncomment this and comment out the above step
+      # - name: Digger with AWS (for later use)
+      #   uses: diggerhq/digger@vLatest
+      #   with:
+      #     digger-spec: ${{ github.event.inputs.spec }}
+      #     setup-aws: true
+      #     setup-terraform: true
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #   env:
+      #     GITHUB_CONTEXT: ${{ toJson(github) }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
