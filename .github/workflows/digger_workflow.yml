@@ -48,49 +48,6 @@ jobs:
           echo "Working directory contents:"
           ls -la
       
-      # Create a basic digger.yml config if it doesn't exist
-      - name: Create digger config
-        run: |
-          if [ ! -f "digger.yml" ]; then
-            cat > digger.yml << EOF
-          projects:
-            - name: test-project
-              dir: .
-              workflow: default
-          workflows:
-            default:
-              plan:
-                steps:
-                  - init
-                  - plan
-              apply:
-                steps:
-                  - init
-                  - apply
-          EOF
-          fi
-          
-      # Create basic terraform files if they don't exist
-      - name: Setup test Terraform
-        run: |
-          if [ ! -f "main.tf" ]; then
-            cat > main.tf << EOF
-          terraform {
-            required_version = ">= 1.0"
-          }
-          
-          resource "null_resource" "test" {
-            provisioner "local-exec" {
-              command = "echo 'Digger test successful'"
-            }
-          }
-          EOF
-          fi
-          
-      # Initialize terraform to avoid lock provider issues
-      - name: Terraform init
-        run: |
-          terraform init
           
       # Option 1: Test without AWS (recommended for initial testing)
       - name: Test Digger without AWS
