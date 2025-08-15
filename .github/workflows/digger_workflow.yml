@@ -31,7 +31,7 @@ jobs:
             echo "JOB_ID=manual-trigger" >> $GITHUB_ENV
           fi
       - name: ${{ env.JOB_ID }}
-        run: echo "Running job: ${{ env.JOB_ID }}"
+        run: echo "Running job ${{ env.JOB_ID }}"
       - uses: diggerhq/digger@vLatest
         with:
           digger-spec: ${{ github.event.inputs.spec }}
