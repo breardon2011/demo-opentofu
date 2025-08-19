@@ -1,6 +1,6 @@
 auto_merge: true
 auto_merge_strategy: "merge"
-delete_prior_comments: "true"
+delete_prior_comments: true
 
 projects:
   - name: dev
