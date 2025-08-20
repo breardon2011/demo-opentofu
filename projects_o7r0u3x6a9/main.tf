@@ -1,13 +1,1 @@
-# GENERATED placeholder for projects_o7r0u3x6a9
-terraform {
-  required_version = ">= 1.3.0"
-  required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.2"
-    }
-  }
-}
-resource "null_resource" "projects_o7r0u3x6a9" {
-  triggers = { project_name = "projects_o7r0u3x6a9" }
-}
+resource "null_resource" "test2" {}
