@@ -1,16 +1,132 @@
 auto_merge: true
 auto_merge_strategy: "merge"
+delete_prior_comments: true
 
 projects:
-  - name: dev
-    dir: dev/
-  - name: prod
-    dir: prod/
-  - name: prod11
-    dir: prod/
-  - name: prod12
-    dir: prod/
-
+  - name: projects_h7k0n3q6t9
+    dir: projects_h7k0n3q6t9/
+  - name: projects_h8k1n4q7t0
+    dir: projects_h8k1n4q7t0/
+  - name: projects_i2l5o8r1u4
+    dir: projects_i2l5o8r1u4/
+  - name: projects_i3l6o9r2u5
+    dir: projects_i3l6o9r2u5/
+  - name: projects_i7l0o3r6u9
+    dir: projects_i7l0o3r6u9/
+  - name: projects_j0m3p6s9v2
+    dir: projects_j0m3p6s9v2/
+  - name: projects_j2m5p8s1v4
+    dir: projects_j2m5p8s1v4/
+  - name: projects_j6r9t2w5z8
+    dir: projects_j6r9t2w5z8/
+  - name: projects_j7m0p3s6v9
+    dir: projects_j7m0p3s6v9/
+  - name: projects_k2n5q8t1w4
+    dir: projects_k2n5q8t1w4/
+  - name: projects_k7n0q3t6w9
+    dir: projects_k7n0q3t6w9/
+  - name: projects_k8n1q4t7w0
+    dir: projects_k8n1q4t7w0/
+  - name: projects_kx7m9n2p4q
+    dir: projects_kx7m9n2p4q/
+  - name: projects_l2o5r8u1x4
+    dir: projects_l2o5r8u1x4/
+  - name: projects_l7o0r3u6x9
+    dir: projects_l7o0r3u6x9/
+  - name: projects_l9o2r5u8x1
+    dir: projects_l9o2r5u8x1/
+  - name: projects_m0p3s6v9y2
+    dir: projects_m0p3s6v9y2/
+  - name: projects_m2p5s8v1y4
+    dir: projects_m2p5s8v1y4/
+  - name: projects_m3p6s9v2y5
+    dir: projects_m3p6s9v2y5/
+  - name: projects_m7p0s3v6y9
+    dir: projects_m7p0s3v6y9/
+  - name: projects_n2q5t8w1z4
+    dir: projects_n2q5t8w1z4/
+  - name: projects_n5q8t1w4z7
+    dir: projects_n5q8t1w4z7/
+  - name: projects_n7q0t3w6z9
+    dir: projects_n7q0t3w6z9/
+  - name: projects_o2r5u8x1a4
+    dir: projects_o2r5u8x1a4/
+  - name: projects_o5r8u1x4a7
+    dir: projects_o5r8u1x4a7/
+  - name: projects_o7r0u3x6a9
+    dir: projects_o7r0u3x6a9/
+  - name: projects_p2s5v8y1b4
+    dir: projects_p2s5v8y1b4/
+  - name: projects_p3s6v9y2b5
+    dir: projects_p3s6v9y2b5/
+  - name: projects_p7s0v3y6b9
+    dir: projects_p7s0v3y6b9/
+  - name: projects_q1v5x8c3n7
+    dir: projects_q1v5x8c3n7/
+  - name: projects_q2t5w8z1c4
+    dir: projects_q2t5w8z1c4/
+  - name: projects_q5t8w1z4c7
+    dir: projects_q5t8w1z4c7/
+  - name: projects_q7t0w3z6c9
+    dir: projects_q7t0w3z6c9/
+  - name: projects_r2u5x8a1d4
+    dir: projects_r2u5x8a1d4/
+  - name: projects_r5u8x1a4d7
+    dir: projects_r5u8x1a4d7/
+  - name: projects_r7u0x3a6d9
+    dir: projects_r7u0x3a6d9/
+  - name: projects_s0v3y6b9e2
+    dir: projects_s0v3y6b9e2/
+  - name: projects_s2v5y8b1e4
+    dir: projects_s2v5y8b1e4/
+  - name: projects_s7v0y3b6e9
+    dir: projects_s7v0y3b6e9/
+  - name: projects_s8v1y4b7e0
+    dir: projects_s8v1y4b7e0/
+  - name: projects_t2w5z8c1f4
+    dir: projects_t2w5z8c1f4/
+  - name: projects_t7w0z3c6f9
+    dir: projects_t7w0z3c6f9/
+  - name: projects_t8w1z4c7f0
+    dir: projects_t8w1z4c7f0/
+  - name: projects_u0x3a6d9g2
+    dir: projects_u0x3a6d9g2/
+  - name: projects_u2x5a8d1g4
+    dir: projects_u2x5a8d1g4/
+  - name: projects_u7x0a3d6g9
+    dir: projects_u7x0a3d6g9/
+  - name: projects_v0z3c6f9i2
+    dir: projects_v0z3c6f9i2/
+  - name: projects_v2y5b8e1h4
+    dir: projects_v2y5b8e1h4/
+  - name: projects_v7y0b3e6h9
+    dir: projects_v7y0b3e6h9/
+  - name: projects_w2z5c8f1i4
+    dir: projects_w2z5c8f1i4/
+  - name: projects_w7z0c3f6i9
+    dir: projects_w7z0c3f6i9/
+  - name: projects_w8z3b5j6r9
+    dir: projects_w8z3b5j6r9/
+  - name: projects_x2a5d8g1j4
+    dir: projects_x2a5d8g1j4/
+  - name: projects_x2z5b8e1h4
+    dir: projects_x2z5b8e1h4/
+  - name: projects_x5a8d1g4j7
+    dir: projects_x5a8d1g4j7/
+  - name: projects_x7a0d3g6j9
+    dir: projects_x7a0d3g6j9/
+  - name: projects_y2b5e8h1k4
+    dir: projects_y2b5e8h1k4/
+  - name: projects_y3b6e9h2k5
+    dir: projects_y3b6e9h2k5/
+  - name: projects_y7b0e3h6k9
+    dir: projects_y7b0e3h6k9/
+  - name: projects_z2c5f8i1l4
+    dir: projects_z2c5f8i1l4/
+  - name: projects_z5c8f1i4l7
+    dir: projects_z5c8f1i4l7/
+  - name: projects_z7c0f3i6l9
+    dir: projects_z7c0f3i6l9/
 
 workflows:
   default:
@@ -18,5 +134,3 @@ workflows:
       steps:
         - init
         - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
-        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
-
