@@ -1,0 +1,23 @@
+auto_merge: true
+auto_merge_strategy: "merge"
+delete_prior_comments: true
+
+projects:
+  - name: dev
+    dir: dev/
+  - name: prod
+    dir: prod/
+  - name: prod11
+    dir: prod/
+  - name: prod12
+    dir: prod/
+
+
+workflows:
+  default:
+    plan:
+      steps:
+        - init
+        - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
+        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
+

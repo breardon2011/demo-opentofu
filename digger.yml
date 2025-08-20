@@ -3,15 +3,312 @@ auto_merge_strategy: "merge"
 delete_prior_comments: true
 
 projects:
-  - name: dev
-    dir: dev/
-  - name: prod
-    dir: prod/
-  - name: prod11
-    dir: prod/
-  - name: prod12
-    dir: prod/
-
+  - name: prod-data_dev_aws_global_route53-zones_dev_hrd-dse_com
+    dir: prod-data_dev_aws_global_route53-zones_dev_hrd-dse_com/
+  - name: prod-data_dev_aws_us-east-1_network_vpcs_eks
+    dir: prod-data_dev_aws_us-east-1_network_vpcs_eks/
+  - name: prod-data_prod_aws_global_route53-zones_prod_hrd-dse_com
+    dir: prod-data_prod_aws_global_route53-zones_prod_hrd-dse_com/
+  - name: prod-data_prod_aws_us-east-1_network_vpcs_eks
+    dir: prod-data_prod_aws_us-east-1_network_vpcs_eks/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_dev-devops
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_dev-devops/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_dev-parent
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_dev-parent/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_devops
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_devops/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_prod-data
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_prod-data/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-dev
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-dev/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-prod
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-prod/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-reg
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-reg/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-staging
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-staging/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-test
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_reporting-test/
+  - name: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_temp-dev-bedrock-gw
+    dir: projects_Infrastructure_shared_aws_devops_prod_us-east-1_ipam_temp-dev-bedrock-gw/
+  - name: projects_Parents_aws_dev_dev_us-east-1_endpoints_devops-internal
+    dir: projects_Parents_aws_dev_dev_us-east-1_endpoints_devops-internal/
+  - name: projects_Parents_aws_dev_ops_prod_us-east-1_network_nat-gateways_use1-az6_devops
+    dir: projects_Parents_aws_dev_ops_prod_us-east-1_network_nat-gateways_use1-az6_devops/
+  - name: projects_Parents_aws_devops_prod_global_iam-policies_AWSLoadBalancerControllerIAMPolicy
+    dir: projects_Parents_aws_devops_prod_global_iam-policies_AWSLoadBalancerControllerIAMPolicy/
+  - name: projects_Parents_aws_devops_prod_global_iam-policies_external-secrets
+    dir: projects_Parents_aws_devops_prod_global_iam-policies_external-secrets/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_argocd
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_argocd/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_atlantis
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_atlantis/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_aws-ebs-csi-driver
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_aws-ebs-csi-driver/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_aws-efs-csi-driver
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_aws-efs-csi-driver/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_aws-load-balancer-controller
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_aws-load-balancer-controller/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_cloudhealth
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_cloudhealth/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_external-dns
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_external-dns/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_external-secrets
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_external-secrets/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_falco-audit
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_falco-audit/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_mimir
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_mimir/
+  - name: projects_Parents_aws_devops_prod_global_iam-roles_pyroscope
+    dir: projects_Parents_aws_devops_prod_global_iam-roles_pyroscope/
+  - name: projects_Parents_aws_devops_prod_global_ipam_root
+    dir: projects_Parents_aws_devops_prod_global_ipam_root/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-dse_com_dev_hrd-dse_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-dse_com_dev_hrd-dse_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-dse_com_prod_hrd-dse_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-dse_com_prod_hrd-dse_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_dev_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_dev_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_prod_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_prod_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_reg_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_reg_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_staging_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_staging_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_test_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-records_hrd-reporting_com_test_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-zones_devops_hrd-dev_com
+    dir: projects_Parents_aws_devops_prod_global_route53-zones_devops_hrd-dev_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-zones_hrd-dse_com
+    dir: projects_Parents_aws_devops_prod_global_route53-zones_hrd-dse_com/
+  - name: projects_Parents_aws_devops_prod_global_route53-zones_hrd-reporting_com
+    dir: projects_Parents_aws_devops_prod_global_route53-zones_hrd-reporting_com/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_cr_l5d_io_linkerd_cni-plugin
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_cr_l5d_io_linkerd_cni-plugin/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_curlimages_curl
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_curlimages_curl/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_custom_rsyslog
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_custom_rsyslog/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_busybox
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_busybox/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_grafana_promtail
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_grafana_promtail/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_library_postgres
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_library_postgres/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_springcloud_spring-cloud-kubernetes-configuration-watcher
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_springcloud_spring-cloud-kubernetes-configuration-watcher/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-agent2
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-agent2/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-server-pgsql
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-server-pgsql/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-web-nginx-pgsql
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-web-nginx-pgsql/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-web-service
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_docker_io_zabbix_zabbix-web-service/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_gcr_io_k8s-staging-test-infra_kubekins-e2e
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_gcr_io_k8s-staging-test-infra_kubekins-e2e/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_ghcr_io_argoproj-labs_argocd-extensions
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_ghcr_io_argoproj-labs_argocd-extensions/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_ghcr_io_external-secrets_external-secrets
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_ghcr_io_external-secrets_external-secrets/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_ebs-csi-driver_aws-ebs-csi-driver
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_ebs-csi-driver_aws-ebs-csi-driver/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_ebs-csi-driver_volume-modifier-for-k8s
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_ebs-csi-driver_volume-modifier-for-k8s/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks_aws-load-balancer-controller
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks_aws-load-balancer-controller/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-attacher
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-attacher/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-provisioner
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-provisioner/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-resizer
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_external-resizer/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_livenessprobe
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_livenessprobe/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_node-driver-registrar
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_public_ecr_aws_eks-distro_kubernetes-csi_node-driver-registrar/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_quay_io_argoproj_argocd
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_quay_io_argoproj_argocd/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_registry_k8s_io_external-dns_external-dns
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_registry_k8s_io_external-dns_external-dns/
+  - name: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_restic_restic
+    dir: projects_Parents_aws_devops_prod_us-east-1_ecr-repositories_restic_restic/
+  - name: projects_Parents_aws_devops_prod_us-east-1_eks_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_eks_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_karpenter
+    dir: projects_Parents_aws_devops_prod_us-east-1_karpenter/
+  - name: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-internal
+    dir: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-internal/
+  - name: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-internal-nlb
+    dir: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-internal-nlb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-monitoring
+    dir: projects_Parents_aws_devops_prod_us-east-1_load-balancers_devops-monitoring/
+  - name: projects_Parents_aws_devops_prod_us-east-1_load-balancers_vpce-to-devops-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_load-balancers_vpce-to-devops-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az1
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az1/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az2
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az2/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az4
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az4/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az6
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_cisco2loki-nlb-az6/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az2
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az2/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az4
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az4/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az6
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_ip-addresses_kiosk2loki-nlb-az6/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_managed-prefix-lists_jira
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_managed-prefix-lists_jira/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az1_devops
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az1_devops/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az2_devops
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az2_devops/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az4_devops
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_nat-gateways_use1-az4_devops/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az1_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az2_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az4_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_routing-tables_use1-az6_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_allow-ssh-mgmt
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_allow-ssh-mgmt/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_devops-internal-nlb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_devops-internal-nlb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_devops-monitoring
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_devops-monitoring/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_https-allow-from-all
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_https-allow-from-all/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_psql-tooling-01
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_psql-tooling-01/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_tf-devops1-parent-control-plane
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_tf-devops1-parent-control-plane/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_tf-devops1-parent-lb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_tf-devops1-parent-lb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_vpce-nlb-devops
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_security-groups_vpce-nlb-devops/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_devops-private-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_devops-private-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az1_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_devops-private-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_devops-private-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az2_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_devops-private-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_devops-private-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az4_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_devops-private-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_devops-private-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_devops-public
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_devops-public/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_tf-devops1-parent
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_tf-devops1-parent/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_tf-devops1-parent-pod
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_subnets_use1-az6_tf-devops1-parent-pod/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-internal
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-internal/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-monitoring
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoint-services_devops-monitoring/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-ecr
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-ecr/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-ecr-dkr
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-ecr-dkr/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-s3
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-endpoints_devops-s3/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-peering-connections_Dev-DevOps
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-peering-connections_Dev-DevOps/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpc-peering-connections_test-reporting
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpc-peering-connections_test-reporting/
+  - name: projects_Parents_aws_devops_prod_us-east-1_network_vpcs_devops
+    dir: projects_Parents_aws_devops_prod_us-east-1_network_vpcs_devops/
+  - name: projects_Parents_aws_devops_prod_us-east-1_rds_psql-tooling-01
+    dir: projects_Parents_aws_devops_prod_us-east-1_rds_psql-tooling-01/
+  - name: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-mimir-ruler
+    dir: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-mimir-ruler/
+  - name: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-mimir-tsdb
+    dir: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-mimir-tsdb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-pyroscope
+    dir: projects_Parents_aws_devops_prod_us-east-1_s3_hrd-devops-pyroscope/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_argocd-githubapp
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_argocd-githubapp/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_argocd-oktasecret
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_argocd-oktasecret/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-cloud-api-key
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-cloud-api-key/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-cloud-api-secret
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-cloud-api-secret/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-dev-platform-api
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-dev-platform-api/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-prod-platform-api
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-prod-platform-api/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-reg-platform-api
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-reg-platform-api/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-stage-platform-api
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-stage-platform-api/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-test-platform-api
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_confluent-test-platform-api/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_databricks-token
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_databricks-token/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_okta-api-token
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_okta-api-token/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_psql-tooling-01
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_psql-tooling-01/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_zabbix-oktacert
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_zabbix-oktacert/
+  - name: projects_Parents_aws_devops_prod_us-east-1_secrets_zabbix-zabbixdb
+    dir: projects_Parents_aws_devops_prod_us-east-1_secrets_zabbix-zabbixdb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-alb
+    dir: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-alb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-internal-nlb
+    dir: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-internal-nlb/
+  - name: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-monitoring
+    dir: projects_Parents_aws_devops_prod_us-east-1_target-groups_devops-monitoring/
+  - name: projects_Reporting_dev_aws_global_route53-zones_dev_hrd-reporting_com
+    dir: projects_Reporting_dev_aws_global_route53-zones_dev_hrd-reporting_com/
+  - name: projects_Reporting_prod_aws_global_route53-zones_prod_hrd-reporting_com
+    dir: projects_Reporting_prod_aws_global_route53-zones_prod_hrd-reporting_com/
+  - name: projects_Reporting_reg_aws_global_route53-zones_reg_hrd-reporting_com
+    dir: projects_Reporting_reg_aws_global_route53-zones_reg_hrd-reporting_com/
+  - name: projects_Reporting_staging_aws_global_route53-zones_staging_hrd-reporting_com
+    dir: projects_Reporting_staging_aws_global_route53-zones_staging_hrd-reporting_com/
+  - name: projects_Reporting_test_aws_us-east-1_network_vpcs_reporting-old
+    dir: projects_Reporting_test_aws_us-east-1_network_vpcs_reporting-old/
 
 workflows:
   default:
@@ -19,5 +316,3 @@ workflows:
       steps:
         - init
         - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
-        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
-
