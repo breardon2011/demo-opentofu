@@ -5,3 +5,11 @@ resource "null_resource" "backend" {
     command = "echo 'Deploying backend service'"
   }
 }
+
+
+
+
+
+
+
+
