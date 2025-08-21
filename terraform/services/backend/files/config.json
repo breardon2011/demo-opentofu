@@ -13,8 +13,5 @@
   "logging": {
     "level": "info",
     "format": "json"
-  },
-  "something": {
-    "something_else": "something_else_value"
   }
 }
