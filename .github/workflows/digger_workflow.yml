@@ -26,11 +26,6 @@ jobs:
         run: echo "job id ${{ fromJSON(github.event.inputs.spec).job_id }}"
       - uses: actions/checkout@v4
 
-      - name: Setup Infracost
-        uses: infracost/actions/setup@v2
-        with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}      
-
       - name: digger
         uses: diggerhq/digger@fix/breardon2011/old-comments-not-deleting
         with:
