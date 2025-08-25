@@ -1,11 +1,6 @@
 resource "null_resource" "test" {}
 
 
-
-
-
-
-
 terraform {
   required_providers {
     aws = {
