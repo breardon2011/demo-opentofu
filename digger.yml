@@ -1,22 +1,55 @@
-auto_merge: true
-auto_merge_strategy: "merge"
+allow_draft_prs: true
+auto_merge: false
+pr_locks: true
+telemetry: false
+traverse_to_nested_projects: true
 
 projects:
-  - name: dev
-    dir: dev/
-  - name: prod
-    dir: prod/
-  - name: prod11
-    dir: prod/
-  - name: prod12
-    dir: prod/
+  - name: SHARED
+    dir: k8s_deployment
+    workflow: terraform
+    include_patterns: ["*.tf", "../_env_data/shared.json", "modules/**/*.tf", "modules/**/*.yaml"]
+    workspace: shared
 
+  - name: DEV
+    dir: k8s_deployment
+    workflow: terraform
+    include_patterns: ["*.tf", "../_env_data/dev.json", "modules/**/*.tf", "modules/**/*.yaml"]
+    workspace: dev
+
+  - name: QA
+    dir: k8s_deployment
+    workflow: terraform
+    include_patterns: ["*.tf", "../_env_data/qa.json", "modules/**/*.tf", "modules/**/*.yaml"]
+    workspace: qa
+
+  - name: PROD
+    dir: k8s_deployment
+    workflow: terraform
+    include_patterns: ["*.tf", "../_env_data/prod.json", "modules/**/*.tf", "modules/**/*.yaml"]
+    workspace: prod
+
+generate_projects:
+  blocks:
+    - include: "./terraform/services/**"
+      workflow: main
 
 workflows:
-  default:
+  terraform:
     plan:
       steps:
         - init
-        - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
-        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
-
+        - plan
+    apply:
+      steps:
+        - init
+        - apply
+  main:
+    plan:
+      steps:
+        - init
+        - plan
+    apply:
+      steps:
+        - init
+        - apply

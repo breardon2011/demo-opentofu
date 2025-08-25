@@ -1,0 +1,6 @@
+{
+  "environment": "prod",
+  "region": "us-west-2",
+  "cluster_name": "prod-cluster",
+  "vpc_cidr": "10.3.0.0/16"
+}
