@@ -36,7 +36,6 @@ jobs:
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
-          setup-aws: false
           disable-locking: true
           setup-opentofu: true
           setup-terraform: true
