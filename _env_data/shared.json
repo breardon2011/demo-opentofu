@@ -1,0 +1,6 @@
+{
+  "environment": "shared",
+  "region": "us-west-2",
+  "cluster_name": "shared-cluster",
+  "vpc_cidr": "10.0.0.0/16"
+}

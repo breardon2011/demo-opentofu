@@ -1,0 +1,17 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "app_db",
+    "user": "app_user"
+  },
+  "api": {
+    "port": 8080,
+    "cors_enabled": true,
+    "rate_limit": 1000
+  },
+  "logging": {
+    "level": "info",
+    "format": "json"
+  }
+}
