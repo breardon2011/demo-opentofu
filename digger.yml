@@ -1,16 +1,29 @@
 auto_merge: true
 auto_merge_strategy: "merge"
 
-projects:
-  - name: dev
-    dir: dev/
-  - name: prod
-    dir: prod/
-  - name: prod11
-    dir: prod/
-  - name: prod12
-    dir: prod/
+# projects:
+#   - name: dev
+#     dir: dev/
+#   - name: prod
+#     dir: prod/
+#   - name: prod11
+#     dir: prod/
+#   - name: prod12
+#     dir: prod/
 
+
+generate_projects:
+  include: "**"
+  terragrunt: true
+  terragrunt_parsing:
+    createProjectName: true
+    projectAliasDelimiter: "/" 
+    autoPlan: true
+    autoMerge: false
+    parallel: true
+    defaultWorkflow: "default"
+    cascadeDependencies: true
+    createWorkspace: true
 
 workflows:
   default:
