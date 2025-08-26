@@ -32,7 +32,7 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: diggerhq/digger@feat/breardon2011/project-aliasing
+        uses: diggerhq/digger@fix/breardon2011/aliasing
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
