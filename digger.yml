@@ -1,22 +1,25 @@
-auto_merge: true
-auto_merge_strategy: "merge"
+respect_layers: true
 
-projects:
-  - name: dev
-    dir: dev/
-  - name: prod
-    dir: prod/
-  - name: prod11
-    dir: prod/
-  - name: prod12
-    dir: prod/
-
+generate_projects:
+  terragrunt_parsing:
+    parallel: true
+    createProjectName: true
+    projectAliasDelimiter: "/"
+    createWorkspace: true
+    defaultWorkflow: default
+    cascadeDependencies: false 
+    executionOrderGroups: true
+    dependsOnOrdering: false
+    
 
 workflows:
   default:
     plan:
+      filter_regex: "((?i)secret.*:\\s\")[^\"]*"
       steps:
         - init
-        - run: terraform plan -input=false -refresh -no-color -out $DIGGER_PLANFILE
-        # - run: infracost breakdown --path=. | tee -a $DIGGER_OUT
-
+        - run: terragrunt plan --provider-cache=false -input=false -parallelism=5 -refresh -no-color -out $DIGGER_PLANFILE
+    apply:
+      steps:
+        - init
+        - run: terragrunt apply -lock-timeout=3m --auto-approve --terragrunt-non-interactive $DIGGER_PLANFILE
