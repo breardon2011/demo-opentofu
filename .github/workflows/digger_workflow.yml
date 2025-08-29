@@ -25,11 +25,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: ${{ fromJSON(github.event.inputs.spec).job_id }}
         run: echo "job id ${{ fromJSON(github.event.inputs.spec).job_id }}"
-      - uses: diggerhq/digger@feat/breardon2011/invalid-bash
+      - uses: diggerhq/digger@v0.6.121
         with:
           digger-spec: ${{ inputs.spec }}
           setup-aws: true
           setup-terragrunt: true
+          local-dev-mode: true 
           setup-opentofu: true  # Add this line
           terragrunt-version: 0.44.1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
