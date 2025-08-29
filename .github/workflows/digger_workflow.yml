@@ -30,7 +30,6 @@ jobs:
           digger-spec: ${{ inputs.spec }}
           setup-aws: true
           setup-terragrunt: true
-          local-dev-mode: true 
           setup-opentofu: true  # Add this line
           terragrunt-version: 0.44.1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
