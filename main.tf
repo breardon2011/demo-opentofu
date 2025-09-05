@@ -1,5 +1,19 @@
 resource "null_resource" "test29" {}
 
+
+terraform { 
+  cloud { 
+    
+    organization = "briancorporation123" 
+
+    workspaces { 
+      name = "brispace" 
+    } 
+  } 
+}
+
+
+
 #variable "TEST" {
 #  default = "hello"
 #}
