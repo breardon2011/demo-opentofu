@@ -32,7 +32,7 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: https://github.com/diggerhq/digger/pull/new/fix/breardon2011/descriptive-cache-error
+        uses: diggerhq/digger@fix/breardon2011/descriptive-cache-error
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
