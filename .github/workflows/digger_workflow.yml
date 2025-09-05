@@ -32,7 +32,7 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: diggerhq/digger@feat/breardon2011/s3-cache
+        uses: https://github.com/diggerhq/digger/pull/new/fix/breardon2011/descriptive-cache-error
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
@@ -43,7 +43,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           cache-dependencies-s3: true 
-          cache-dependencies-s3-bucket: s3://digger-cache
+          cache-dependencies-s3-bucket: s3://digger-cae
           cache-dependencies-s3-region: us-east-2
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
