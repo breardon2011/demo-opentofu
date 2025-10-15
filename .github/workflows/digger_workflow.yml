@@ -12,7 +12,7 @@ run-name: ${{inputs.run_name}}
 
 jobs:
   digger-job:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: write      # required to merge PRs
       actions: write       # required for plan persistence
@@ -36,8 +36,9 @@ jobs:
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
-          digger-os: "darwin"
-          digger-arch: "arm64"
+          digger-os: "Linux"
+          digger-arch: "X64"
+          digger-version: ""
           setup-aws: false
           disable-locking: true
           setup-opentofu: true
