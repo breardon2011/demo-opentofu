@@ -32,12 +32,13 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: diggerhq/digger@vLatest
+        uses: diggerhq/digger@bd1a54120e1fe0e410e84b6d9a5e9bbcce7f3897
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
-          digger-os: "darwin"
-          digger-arch: "arm64"
+          digger-os: "Linux"
+          digger-arch: "X64"
+          digger-version: v0.6.128 
           setup-aws: false
           disable-locking: true
           setup-opentofu: true
