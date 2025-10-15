@@ -38,7 +38,7 @@ jobs:
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
           digger-os: "Linux"
           digger-arch: "X64"
-          digger-version: v0.6.128 
+          digger-version: vLatest
           setup-aws: false
           disable-locking: true
           setup-opentofu: true
